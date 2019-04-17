@@ -1,0 +1,139 @@
+{
+  "Style Sheet Root element": {
+    "prefix": "sty",
+    "body": [
+
+      "<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"", 
+      "     xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xpath-default-namespace=\"http://quark.com/smartcontent/4.0\"",
+      "     exclude-result-prefixes=\"xs\" version=\"2.0\">",
+      "</xsl:stylesheet>"
+    ],
+    "description": "Create root element for XSLT"
+  },
+  "Dump XPath node": {
+    "prefix": "dump",
+    "body": [
+      "<xsl:copy-of select=\"$1\">",
+      "  <xsl:value-of select=\".\" />",
+      "</xsl:copy-of>"
+    ],
+    "description": "Dump an xsl node tree structure"
+  },
+  "Comment": {
+    "prefix": "cm",
+    "body": [
+      "<!-- $1 -->"
+    ],
+    "description": "XSL Comment tag"
+  },
+  "Variable": {
+    "prefix": "var",
+    "body": [
+      "<xsl:variable name=\"$1\">",
+      "  $2",
+      "</xsl:variable>"
+    ],
+    "description": "XSL Variable"
+  },
+  "Choose": {
+    "prefix": "choose",
+    "body": [
+      "<xsl:choose>",
+      "  <xsl:when test=\"$1\">",
+      "    $2",
+      "  </xsl:when>",
+      "  <xsl:otherwise>",
+      "      $3",
+      "  </xsl:otherwise>",
+      "</xsl:choose>"
+    ],
+    "description": "XSL Choose"
+  },
+  "When": {
+    "prefix": "when",
+    "body": [
+      "<xsl:when test=\"$1\">",
+      "  $2",
+      "</xsl:when>"
+    ],
+    "description": "XSL When"
+  },
+  "If": {
+    "prefix": "if",
+    "body": [
+      "<xsl:if test=\"$1\">",
+      "  $2",
+      "</xsl:if>"
+    ],
+    "description": "XSL If"
+  },
+  "Template": {
+    "prefix": "temp",
+    "body": [
+      "<xsl:template match=\"$1\">",
+      "  $2",
+      "</xsl:template>"
+    ],
+    "description": "XSL Template"
+  },
+  "Value of": {
+    "prefix": "val",
+    "body": [
+      "<xsl:value-of select=\"$1\" />"
+    ],
+    "description": "XSL Value Of"
+  },
+  "Otherwise": {
+    "prefix": "other",
+    "body": [
+      "<xsl:otherwise>$1</xsl:otherwise>"
+    ],
+    "description": "XSL Otherwise"
+  },
+  "Apply": {
+    "prefix": "apply",
+    "body": [
+      "<xsl:apply-templates select=\"$1\" />"
+    ],
+    "description": "XSL apply templates"
+  },
+  "Param": {
+    "prefix": "param",
+    "body": [
+      "<xsl:param name=\"$1\" />"
+    ],
+    "description": "XSL Parameter"
+  },
+  "With Param": {
+    "prefix": "with",
+    "body": [
+      "<xsl:with-param name=\"$1\" select=\"$2\"/>"
+    ],
+    "description": "XSL With Parameter"
+  },
+  "Attribute": {
+    "prefix": "attribute",
+    "body": [
+      "<xsl:attribute name=\"$1\">",
+      "  $2",
+      "</xsl:attribute>"
+    ],
+    "description": "XSL Attribute"
+  },
+  "Text": {
+    "prefix": "text",
+    "body": [
+      "<xsl:text>$1</xsl:text>"
+    ],
+    "description": "XSL Text"
+  },
+  "Copy-Of": {
+    "prefix": "copy",
+    "body": [
+      "<xsl:copy-of select=\"$1\">",
+      "  $2",
+      "</xsl:copy-of>"
+    ],
+    "description": "XSL Copy-of"
+  }
+}

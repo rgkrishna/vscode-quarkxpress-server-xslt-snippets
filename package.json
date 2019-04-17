@@ -1,0 +1,31 @@
+{
+  "name": "vscode-qxps-xslt-snippets",
+  "publisher": "rgkrishna",
+  "displayName": "QuarkXPress Server XSLT Snippets",
+  "description": "XSLT Snippets for QuarkXPress Server",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#840754",
+    "theme": "dark"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rgkrishna/vscode-quarkxpress-server-xslt-snippets.git"
+  },
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "0.10.x"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "xslt",
+        "path": "./snippets/xslt.json"
+      }
+    ]
+  }
+}
