@@ -1,0 +1,506 @@
+{
+  "SmartContent_StyleSheet_Root_element": {
+    "prefix": "initsty",
+    "body": [
+      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"", 
+      "     xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xpath-default-namespace=\"http://quark.com/smartcontent/4.0\"",
+      "     exclude-result-prefixes=\"xs\" version=\"2.0\">",
+      "",
+      "     $0",
+      "",
+      "</xsl:stylesheet>"
+    ],
+    "description": "Root element for Smart Content to QXPS XSLT"
+  },
+  "Style_Sheet_Root_element": {
+    "prefix": "sty",
+    "body": [
+      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"", 
+      "     xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" ",
+      "     exclude-result-prefixes=\"xs\" version=\"2.0\">",
+      "",
+      "     $0",
+      "",
+      "</xsl:stylesheet>"
+    ],
+    "description": "Create root element for XSLT"
+  },
+  "Dump_XPath_node": {
+    "prefix": "dump",
+    "body": [
+      "<xsl:copy-of select=\"$1\">",
+      "   <xsl:value-of select=\".\" />",
+      "</xsl:copy-of>",
+      "$0"
+    ],
+    "description": "Dump an xsl node tree structure"
+  },
+  "Comment": {
+    "prefix": "cm",
+    "body": [
+      "<!-- ${1:comment} -->",
+      "$0"
+    ],
+    "description": "XSL Comment tag"
+  },
+  "Variable": {
+    "prefix": "var",
+    "body": [
+      "<xsl:variable name=\"${1:VariableName}\" select=\"${2:VariableValue}\" />",
+      "$0"
+    ],
+    "description": "XSL Variable"
+  },
+  "Choose": {
+    "prefix": "choose",
+    "body": [
+      "<xsl:choose>",
+      "   <xsl:when test=\"${1:TestCondition}\">",
+      "      $2",
+      "   </xsl:when>",
+      "   <xsl:otherwise>",
+      "      $3",
+      "   </xsl:otherwise>",
+      "</xsl:choose>",
+      "$0"
+    ],
+    "description": "XSL Choose"
+  },
+  "When": {
+    "prefix": "when",
+    "body": [
+      "<xsl:when test=\"${1:TestCondition}\">",
+      "   $2",
+      "</xsl:when>",
+      "$0"
+    ],
+    "description": "XSL When"
+  },
+  "If": {
+    "prefix": "if",
+    "body": [
+      "<xsl:if test=\"${1:TestCondition}\">",
+      "   $2",
+      "</xsl:if>",
+      "$0"
+    ],
+    "description": "XSL If"
+  },
+  "Template": {
+    "prefix": "temp",
+    "body": [
+      "<xsl:template match=\"${1:SmartContentElement}\">",
+      "   $2",
+      "</xsl:template>",
+      "$0"
+    ],
+    "description": "XSL Template"
+  },
+  "Value_of": {
+    "prefix": "val",
+    "body": [
+      "<xsl:value-of select=\"$1\" />$0"
+    ],
+    "description": "XSL Value Of"
+  },
+  "Otherwise": {
+    "prefix": "other",
+    "body": [
+      "<xsl:otherwise>",
+      "   $1",
+      "</xsl:otherwise>$0"
+    ],
+    "description": "XSL Otherwise"
+  },
+  "Apply": {
+    "prefix": "apply",
+    "body": [
+      "<xsl:apply-templates select=\"$1\" />$0"
+    ],
+    "description": "XSL apply templates"
+  },
+  "Param": {
+    "prefix": "param",
+    "body": [
+      "<xsl:param name=\"${1:ParamName}\" select=\"${2:InitialValue}\"/>$0"
+    ],
+    "description": "XSL Parameter"
+  },
+  "With_Param": {
+    "prefix": "with",
+    "body": [
+      "<xsl:with-param name=\"${1:ParamName}\" select=\"${2:ValueForParam}\"/>$0"
+    ],
+    "description": "XSL With Parameter"
+  },
+  "Attribute": {
+    "prefix": "attribute",
+    "body": [
+      "<xsl:attribute name=\"${1:xpattr}\" select=\"${2:AttributeValue}\"/>$0"
+    ],
+    "description": "XSL Attribute"
+  },
+  "Text": {
+    "prefix": "text",
+    "body": [
+      "<xsl:text>$1</xsl:text>$0"
+    ],
+    "description": "XSL Text"
+  },
+  "Copy-Of": {
+    "prefix": "copy",
+    "body": [
+      "<xsl:copy-of select=\"$1\">",
+      "  $2",
+      "</xsl:copy-of>",
+      "$0"
+    ],
+    "description": "XSL Copy-of"
+  },
+  "output": {
+    "prefix": "output",
+    "body": [
+      "<xsl:output indent=\"no\" method=\"xml\" encoding=\"UTF-8\" />",
+      "$0"
+    ],
+    "description": "XSL output"
+  },
+  "rule": {
+    "prefix": "rule",
+    "body": [
+      "<xsl:template match=\"${1:MatchElement}\" mode=\"${2:xpmode}\">",
+      "    <xsl:value-of select=\"${3:YourValue}\"/>",
+      "</xsl:template>",
+      "",
+      "$0"
+    ],
+    "description": "Style Apply Rule"
+  },
+  "apply.character.attributes": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.character.attributes"
+    ],
+    "description": "Apply XPress character attributes on any text node"
+  }
+  ,
+  "apply.paragraph.style": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.paragraph.style"
+    ],
+    "description": "Apply XPress Paragraph Style on any block element"
+  },
+  "apply.paragraph.attributes": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.paragraph.attributes"
+    ],
+    "description": "Apply XPress Paragraph attributes on any block element"
+  },
+  "apply.paragraph.format.attributes": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.paragraph.format.attributes"
+    ],
+    "description": "Apply XPress Paragraph Format attributes on any block element. Not same as basic Paragraph attributes."
+  }
+  
+  ,
+  "apply.basic.character.attributes": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.basic.character.attributes"
+    ],
+    "description": "Apply XPress basic character formats like BOLD, ITALIC, UNDERLINE, etc. "
+  }
+
+  
+  ,
+  "apply.box.item.style": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.box.item.style"
+    ],
+    "description": "apply.box.item.style"
+  }
+  
+  ,
+  "apply.box.attributes": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.box.attributes"
+    ],
+    "description": "apply.box.attributes"
+  }
+  
+  ,
+  "apply.box.paragraph.style": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.box.paragraph.style"
+    ],
+    "description": "apply.box.paragraph.style"
+  }
+  
+  ,
+  "apply.box.paragraph.attributes": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.box.paragraph.attributes"
+    ],
+    "description": "apply.box.paragraph.attributes"
+  }
+  
+  ,
+  "apply.box.paragraph.format.attributes": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.box.paragraph.format.attributes"
+    ],
+    "description": "apply.box.paragraph.format.attributes"
+  }
+  
+  ,
+  "apply.box.bnstyle.attributes": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.box.bnstyle.attributes"
+    ],
+    "description": "Apply XPress Paragraph Style on any block element"
+  }
+  
+  ,
+  "apply.callout.style": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.callout.style"
+    ],
+    "description": "Apply XPress Paragraph Style on any block element"
+  }
+  
+  ,
+  "apply.calloutbox.paragraph.style": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.calloutbox.paragraph.style"
+    ],
+    "description": "Apply XPress Paragraph Style on any block element"
+  }
+  
+  ,
+  "apply.table.style": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.table.style"
+    ],
+    "description": "apply.table.style"
+  }
+  
+  ,
+  "autofit.table.columns": {
+    "prefix": "xpmode",
+    "body": [
+      "autofit.table.columns"
+    ],
+    "description": "autofit.table.columns"
+  }
+  
+  ,
+  "apply.table.attributes": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.table.attributes"
+    ],
+    "description": "apply.table.attributes"
+  }
+  
+  ,
+
+
+  "apply.table.row.attributes": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.table.row.attributes"
+    ],
+    "description": "Apply Table row formatting attributes."
+  }
+  
+  ,
+  "apply.table.entry.attributes": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.table.entry.attributes"
+    ],
+    "description": "Apply Table entry formatting attributes."
+  }
+  
+  ,
+  "create.table.colgroup": {
+    "prefix": "xpmode",
+    "body": [
+      "create.table.colgroup"
+    ],
+    "description": "Create column group for matched Table."
+  }
+  
+  ,
+  "process.table.entry.attributes": {
+    "prefix": "xpmode",
+    "body": [
+      "process.table.entry.attributes"
+    ],
+    "description": "Process table entry with custom control."
+  }
+  
+  ,
+  "apply.indexterm.reference.style": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.indexterm.reference.style"
+    ],
+    "description": "Apply XPress index reference style."
+  }
+  
+  ,
+  "apply.index.separators.attributes": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.index.separators.attributes"
+    ],
+    "description": "Apply custom indexing separators attributes."
+  }
+  
+  ,
+  "apply.index.level.style.attributes": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.index.level.style.attributes"
+    ],
+    "description": "Apply XPress Paragraph styles for different levels of indexing."
+  }
+  
+  ,
+  "apply.bnstyle.attributes": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.bnstyle.attributes"
+    ],
+    "description": "Apply XPress Bullet and Numbering attributes on block elements (lists,..)"
+  }
+  
+  ,
+  "apply.refnote.style": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.refnote.style"
+    ],
+    "description": "Apply XPress Footnote or Endnote style on reference notes."
+  }
+  
+  ,
+  "apply.hyperlink.attributes": {
+    "prefix": "xpmode",
+    "body": [
+      "apply.hyperlink.attributes"
+    ],
+    "description": "Apply character attributes on Hyperlink text."
+  }
+  
+  ,
+  "set.alternative.text": {
+    "prefix": "xpmode",
+    "body": [
+      "set.alternative.text"
+    ],
+    "description": "w/ or w/o any condition set any text as alternative text."
+  }
+  
+  ,
+  "process.bodydiv": {
+    "prefix": "xpmode",
+    "body": [
+      "process.bodydiv"
+    ],
+    "description": "Custom processing of child elements of <bodydiv>, reorder, omit etc."
+  }
+  
+  ,
+  "prepend.element": {
+    "prefix": "xpmode",
+    "body": [
+      "prepend.element"
+    ],
+    "description": "Prepend any elements to matched elements."
+  }
+  
+  ,
+  "append.element": {
+    "prefix": "xpmode",
+    "body": [
+      "append.element"
+    ],
+    "description": "Append any elements to matched elements."
+  }
+  ,
+  "BOLD": {
+    "prefix": "xpattr",
+    "body": [
+      "BOLD"
+    ],
+    "description": "Character attribute on text node"
+  }
+  ,
+  "ITALIC": {
+    "prefix": "xpattr",
+    "body": [
+      "ITALIC"
+    ],
+    "description": "Character attribute on text node"
+  }
+  ,
+  "RICHTEXT": {
+    "prefix": "xptag",
+    "body": [
+      "RICHTEXT"
+    ],
+    "description": "Container for inline text supports to add character formatting attributes"
+  }
+  ,
+  "PARAGRAPH": {
+    "prefix": "xptag",
+    "body": [
+      "PARAGRAPH"
+    ],
+    "description": "Container for paragraph text supports to add paragraph formatting attributes"
+  }
+  ,
+
+  "Paragraph Style": {
+    "prefix": "tutor paragraph style",
+    "body": [
+      "<!-- Apply paragraph example -->",
+      "<!--",
+      "<xsl:template match=\"p\" mode=\"apply.paragraph.style\">",
+      "    <xsl:value-of select=\"'Normal Paragraph'\"/>",
+      "</xsl:template>",
+      "-->",
+      "<!--",
+      "match=\"p[@type = 'lq']\"",
+      "match=\"bodydiv[@type = 'figure']/p[@type = 'desc']\"",
+      "match=\"ul/li/p[1]\"",
+      "-->",
+      "<!-- with variable -->",
+      "<!--",
+      "<xsl:template match=\"p\" mode=\"apply.paragraph.style\">",
+      "    <xsl:value-of select=\"$para.style.body.paragraph\"/>",
+      "</xsl:template>",
+      "-->"
+    ],
+    "description": "Paragraph Style"
+  }
+
+
+}
