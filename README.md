@@ -11,7 +11,7 @@ Primarily intended to help developers working on XSLTs for Smart Content to Quar
 | cm        | `<!-- $1 -->`  |
 | var       | `<xsl:variable name="$1" select="$2"/>` |
 | val       | `<xsl:value-of select="$1"/>` |
-| choose    | `<xsl:choose><xsl:when test="$1">$2</xsl:when><xsl:otherwise>$3</xsl:otherwise>`</xsl:choose>` |
+| choose    | `<xsl:choose><xsl:when test="$1">$2</xsl:when><xsl:otherwise>$3</xsl:otherwise></xsl:choose>` |
 | when      | `<xsl:when test="$1">$2</xsl:when>` |
 | otherwise | `<xsl:otherwise>$1</xsl:otherwise>` |
 | if        | `<xsl:if test="$1">$2</xsl:if>` |
